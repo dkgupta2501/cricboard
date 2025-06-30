@@ -6,7 +6,7 @@ const doc = {
     description: 'Auto-generated Swagger documentation for live cricket scoring app',
   },
   host: 'cricboard.onrender.com',
-  schemes: ['http'],
+  schemes: ['https'],
 };
 
 const outputFile = './swagger-output.json';
