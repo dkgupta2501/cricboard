@@ -5,7 +5,7 @@
     "description": "Auto-generated Swagger documentation for live cricket scoring app",
     "version": "1.0.0"
   },
-  "host": "lhttps://cricboard.onrender.com",
+  "host": "cricboard.onrender.com",
   "basePath": "/",
   "schemes": [
     "http"

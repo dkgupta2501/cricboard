@@ -5,7 +5,7 @@ const doc = {
     title: 'Cricket Live API',
     description: 'Auto-generated Swagger documentation for live cricket scoring app',
   },
-  host: 'https://cricboard.onrender.com',
+  host: 'cricboard.onrender.com',
   schemes: ['http'],
 };
 
