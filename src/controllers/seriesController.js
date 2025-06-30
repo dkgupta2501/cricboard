@@ -27,11 +27,11 @@ exports.createSeries = async (req, res) => {
 
 exports.getAllSeries = async (req, res) => {
   try {
-    const cached = await redisClient.get('series:list');
+    //const cached = await redisClient.get('series:list');
 
-    if (cached) {
-      return res.json(JSON.parse(cached));
-    }
+    // if (cached) {
+    //   return res.json(JSON.parse(cached));
+    // }
 
     const result = await pool.query('SELECT * FROM series ORDER BY start_date DESC');
 
