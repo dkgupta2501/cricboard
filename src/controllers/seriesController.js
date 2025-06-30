@@ -1,6 +1,22 @@
 const pool = require('../config/db');
 const redisClient = require('../config/redis');
 
+
+exports.getDataValue = async (req, res) => {
+  try {
+    const data = [
+      { id: 1, value: 'Test 1' },
+      { id: 2, value: 'Test 2' },
+      { id: 3, value: 'Test 3' }
+    ];
+
+    res.status(200).json(data);
+  } catch (err) {
+    console.error('Error getting data:', err);
+    res.status(500).json({ error: 'Server error' });
+  }
+};
+
 exports.createSeries = async (req, res) => {
   const { name, description, start_date, end_date } = req.body;
 
