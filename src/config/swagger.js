@@ -11,7 +11,7 @@ const options = {
     },
     servers: [
       {
-        url: "http://localhost:5001", // ✅ Correct for local dev
+        url: "http://cricboard.onrender.com", // ✅ Correct for local dev
         description: "Dev server"
       }
     ]
