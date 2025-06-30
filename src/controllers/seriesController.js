@@ -16,7 +16,7 @@ exports.createSeries = async (req, res) => {
     );
 
     // Invalidate cache
-    await redisClient.del('series:list');
+   // await redisClient.del('series:list');
 
     res.status(201).json(result.rows[0]);
   } catch (err) {
@@ -35,7 +35,7 @@ exports.getAllSeries = async (req, res) => {
 
     const result = await pool.query('SELECT * FROM series ORDER BY start_date DESC');
 
-    await redisClient.setEx('series:list', 60, JSON.stringify(result.rows)); // cache for 60s
+    //await redisClient.setEx('series:list', 60, JSON.stringify(result.rows)); // cache for 60s
 
     res.json(result.rows);
   } catch (err) {
