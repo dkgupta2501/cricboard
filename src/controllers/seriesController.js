@@ -7,7 +7,8 @@ exports.getDataValue = async (req, res) => {
     const data = [
       { id: 1, value: 'Test 1' },
       { id: 2, value: 'Test 2' },
-      { id: 3, value: 'Test 3' }
+      { id: 3, value: 'Test 3' },
+      { id: 4, value: 'Test 4' }
     ];
 
     res.status(200).json(data);
