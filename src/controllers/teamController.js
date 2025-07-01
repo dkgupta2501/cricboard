@@ -16,7 +16,7 @@ exports.createTeam = async (req, res) => {
     );
 
     // Invalidate cache
-    await redis.del('teams:list');
+    // await redis.del('teams:list');
 
     res.status(201).json(result.rows[0]);
   } catch (err) {
@@ -27,15 +27,15 @@ exports.createTeam = async (req, res) => {
 
 exports.getAllTeams = async (req, res) => {
   try {
-    const cached = await redis.get('teams:list');
+    // const cached = await redis.get('teams:list');
 
-    if (cached) {
-      return res.json(JSON.parse(cached));
-    }
+    // if (cached) {
+    //   return res.json(JSON.parse(cached));
+    // }
 
     const result = await pool.query(`SELECT * FROM teams ORDER BY name ASC`);
 
-    await redis.setEx('teams:list', 60, JSON.stringify(result.rows));
+    //await redis.setEx('teams:list', 60, JSON.stringify(result.rows));
 
     res.json(result.rows);
   } catch (err) {
