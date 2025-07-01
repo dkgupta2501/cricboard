@@ -19,6 +19,7 @@ const playerRoutes = require('./routes/playerRoutes');
 const matchRoutes = require('./routes/matchRoutes');
 const playingXiRoutes = require('./routes/playingXiRoutes');
 const scoreEventRoutes = require('./routes/scoreEventRoutes');
+const regionEventRoutes = require('./routes/regionRoutes');
 
 
 
@@ -37,6 +38,7 @@ app.use('/api/players', playerRoutes);
 app.use('/api/matches', matchRoutes);
 app.use('/api/match_playing_xi', playingXiRoutes);
 app.use('/api/score-events', scoreEventRoutes);
+app.use('/api/region', regionEventRoutes);
 // Swagger
 const swaggerUi = require('swagger-ui-express');
 const swaggerFile = require('../swagger-output.json'); // path to generated file
