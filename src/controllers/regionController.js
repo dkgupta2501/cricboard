@@ -75,3 +75,51 @@ exports.getCountryList = async (req, res) => {
     }
   };
   
+
+  const axios = require('axios');
+const stateMap = require('../utils/stateMap');
+
+exports.getCitiesByStateCodeOnly = async (req, res) => {
+  try {
+    const { state, state_code } = req.body;
+
+    if (!state || !state_code) {
+      return res.status(400).json({ message: 'state and state_code are required' });
+    }
+
+    // Assume India for now (you can extend later)
+    const country = "India";
+    const countryCode = "IN";
+
+    const expectedState = stateMap[countryCode]?.[state_code];
+
+    if (!expectedState) {
+      return res.status(404).json({ message: `No matching state for code: ${state_code}` });
+    }
+
+    if (expectedState.toLowerCase() !== state.toLowerCase()) {
+      return res.status(400).json({ message: `State name does not match state code: expected ${expectedState}` });
+    }
+
+    // Call external API
+    const response = await axios.post('https://countriesnow.space/api/v0.1/countries/state/cities', {
+      country,
+      state
+    });
+
+    if (response.data.error) {
+      return res.status(500).json({ message: 'Error from external API', error: response.data.msg });
+    }
+
+    return res.status(200).json({
+      country,
+      state,
+      state_code,
+      cities: response.data.data
+    });
+
+  } catch (error) {
+    console.error('Error fetching cities:', error.message);
+    return res.status(500).json({ message: 'Internal server error' });
+  }
+};
