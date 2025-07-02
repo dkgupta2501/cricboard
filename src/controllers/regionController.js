@@ -76,9 +76,6 @@ exports.getCountryList = async (req, res) => {
   };
   
 
-  const axios = require('axios');
-const stateMap = require('../utils/stateMap');
-
 exports.getCitiesByStateCodeOnly = async (req, res) => {
   try {
     const { state, state_code } = req.body;
