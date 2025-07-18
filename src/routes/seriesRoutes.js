@@ -8,7 +8,8 @@ router.post('/createSeries', createSeries);
 
 router.get('/getAllSeries', getAllSeries);
 router.get('/getDataValue', getDataValue);
-router.get('/getUserDetails', getUserDetails);
+router.post('/getUserDetails', getUserDetails);
+
 
 router.post('/:series_id/teams', assignTeamsToSeries);
 router.get('/:series_id/teams', getTeamsForSeries)

@@ -20,18 +20,25 @@ exports.getDataValue = async (req, res) => {
 
 exports.getUserDetails = async (req, res) => {
   try {
+    const { userId } = req.body; // get userId from POST body
+
+    // You can log or use userId here if needed
+    console.log('Requested userId:', userId);
+
+    // Since data is hardcoded, just return it always
     const data = {
       name: "Dhananjay Kumar Gupta",
       email: "dhananjay@gmail.com",
       mobile: "7256908978"
     };
-    console.error('Error assigning teams to series:', data);
+
     res.status(200).json(data);
   } catch (err) {
     console.error('Error getting data:', err);
     res.status(500).json({ error: 'Server error' });
   }
 };
+
 
 exports.createSeries = async (req, res) => {
   const { name, description, start_date, end_date } = req.body;
