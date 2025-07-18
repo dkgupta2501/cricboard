@@ -10,7 +10,22 @@ exports.getDataValue = async (req, res) => {
       { id: 3, value: 'Test 3' },
       { id: 4, value: 'Test 4' }
     ];
+    console.error('Error assigning teams to series:', data);
+    res.status(200).json(data);
+  } catch (err) {
+    console.error('Error getting data:', err);
+    res.status(500).json({ error: 'Server error' });
+  }
+};
 
+exports.getUserDetails = async (req, res) => {
+  try {
+    const data = {
+      name: "Dhananjay Kumar Gupta",
+      email: "dhananjay@gmail.com",
+      mobile: "7256908978"
+    };
+    console.error('Error assigning teams to series:', data);
     res.status(200).json(data);
   } catch (err) {
     console.error('Error getting data:', err);

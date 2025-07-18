@@ -7,10 +7,10 @@ const pool = new Pool({
   database: process.env.DB_NAME,
   password: process.env.DB_PASSWORD,
   port: process.env.DB_PORT,
-  ssl: {
-    require: true,
-    rejectUnauthorized: false // This is needed for Supabase
-  }
+  // ssl: {
+  //   require: true,
+  //   rejectUnauthorized: false // This is needed for Supabase
+  // }
 });
 
 // Test the connection

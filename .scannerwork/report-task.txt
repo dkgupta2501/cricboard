@@ -1,0 +1,6 @@
+projectKey=my-node-project
+serverUrl=http://192.168.9.219:9000
+serverVersion=25.3.0.104237
+dashboardUrl=http://192.168.9.219:9000/dashboard?id=my-node-project
+ceTaskId=0694302a-c291-448c-9826-bf3c6c5def95
+ceTaskUrl=http://192.168.9.219:9000/api/ce/task?id=0694302a-c291-448c-9826-bf3c6c5def95
