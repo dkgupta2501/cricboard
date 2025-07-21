@@ -29,7 +29,8 @@ exports.getUserDetails = async (req, res) => {
     const data = {
       name: "Dhananjay Kumar Gupta",
       email: "dhananjay@gmail.com",
-      mobile: "7256908978"
+      mobile: "7256908978",
+      date:"2025-07-18"
     };
 
     res.status(200).json(data);
